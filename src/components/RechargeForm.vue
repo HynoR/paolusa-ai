@@ -87,7 +87,7 @@ const handleSubmit = async () => {
 
   loading.value = true;
   try {
-    const response = await axios.post('https://lab.nloli.xyz/tako_web/gpt_recharge', JSON.stringify({
+    const response = await axios.post('https://labapi.nloli.xyz/tako_web/gpt_recharge', JSON.stringify({
       passwd: form.passwd,
       amount: form.amount * 100, // 转换为分
       token: form.token

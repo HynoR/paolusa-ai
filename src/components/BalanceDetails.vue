@@ -117,7 +117,7 @@ async function fetchBalanceHistory() {
     return;
   }
   try {
-    const response = await axios.get('https://lab.nloli.xyz/tako_web/gpt_history', { params: { token: ctoken } });
+    const response = await axios.get('https://labapi.nloli.xyz/tako_web/gpt_history', { params: { token: ctoken } });
     if (!response.data.data) {
       ElMessage.warning('暂无余额历史');
       return;
