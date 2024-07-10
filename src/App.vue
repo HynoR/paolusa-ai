@@ -63,7 +63,7 @@ const getInfo = async () => {
   }
 
   try {
-    const response = await axios.get('https://labapi.nloli.xyz/tako_web/gpt_info?token=' + token.value);
+    const response = await axios.get('https://labv.nloli.xyz/tako_web/gpt_info?token=' + token.value);
     const userInfo = response.data;
     if (userInfo && userInfo.api_key.length > 0) {
       SetUserInfo(userInfo)
