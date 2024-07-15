@@ -20,7 +20,8 @@
     <div class="model-info">
       <p><small>所有非官方接口模型均低于官网价格，大概在2折到8折之间。官方接口模型为官方原价</small></p>
       <p><small>灵车(相当便宜但是较慢,视觉功能不稳定) / 普通 (标准速度和低廉价格,正常视觉能力和功能) / 官方 (最快速度和原始价格)</small></p>
-      <p><small>I：用户输入1M Token单价(单位CNY) / O：AI输出1M Token单价(单位CNY) / X: 参考折扣（该模型折扣约为官方价格的折扣比例）</small></p>
+      <p><small>I：用户输入1M Token单价(单位usd) / O：AI输出1M Token单价(单位usd) / X: 参考折扣（该模型折扣约为官方价格的折扣比例）</small></p>
+      <p><small> 价格计算方法 = (输入token * I + 输出token * O ) * X</small></p>
     </div>
 
     <el-tabs type="border-card">
@@ -57,6 +58,34 @@
         </el-table>
       </el-tab-pane>
     </el-tabs>
+  </el-card>
+  <el-card>
+    <div>国产模型API一般用于开发和对比测试，如您需要常规使用对话，推荐使用国产模型官方的免费对话。</div>
+    <el-button type="text">
+      <a href="https://kimi.moonshot.cn/" target="_blank">
+      月之暗面
+      </a>
+    </el-button>
+    <el-button type="text">
+      <a href="https://chatglm.cn/" target="_blank">
+      智谱清言GLM
+      </a>
+    </el-button>
+    <el-button type="text">
+      <a href="https://tongyi.aliyun.com/qianwen/" target="_blank">
+      通义千问
+      </a>
+    </el-button>
+    <el-button type="text">
+      <a href="https://chat.deepseek.com/" target="_blank">
+        DeepSeek
+      </a>
+      </el-button>
+    <el-button type="text">
+      <a href="https://www.wanzhi.com/" target="_blank">
+      01万物
+      </a>
+    </el-button>
   </el-card>
 </template>
 

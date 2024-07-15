@@ -8,24 +8,24 @@
         {
           "name": "claude-3-haiku",
           "upstream": "普通",
-          "description": "Haiku是Anthropic最快速、最紧凑的模型，能提供近乎即时的响应。它能以无与伦比的速度回答简单的查询和请求。用户将能够构建无缝的AI体验，模仿人类的互动。",
+          "description": "(推荐)Haiku是Anthropic最快速、最紧凑的模型，能提供近乎即时的响应。它能以无与伦比的速度回答简单的查询和请求。用户将能够构建无缝的AI体验，模仿人类的互动。",
           "window": "200K",
           "recommend": "5",
           "price": {
-            "input": "0.45",
-            "output": "2.25",
+            "input": "0.25",
+            "output": "1.25",
             "multiplier": "0.2"
           }
         },
         {
           "name": "claude-3-haiku-20240307",
           "upstream": "普通",
-          "description": "Haiku是Anthropic最快速、最紧凑的模型，能提供近乎即时的响应。它能以无与伦比的速度回答简单的查询和请求。用户将能够构建无缝的AI体验，模仿人类的互动。",
+          "description": "(推荐)Haiku是Anthropic最快速、最紧凑的模型，能提供近乎即时的响应。它能以无与伦比的速度回答简单的查询和请求。用户将能够构建无缝的AI体验，模仿人类的互动。",
           "window": "200K",
           "recommend": "5",
           "price": {
-            "input": "0.45",
-            "output": "2.25",
+            "input": "0.25",
+            "output": "1.25",
             "multiplier": "0.2"
           }
         },
@@ -67,8 +67,8 @@
           "window": "128K",
           "recommend": 10,
           "price": {
-            "input": "7.5",
-            "output": "22.5",
+            "input": "5",
+            "output": "15",
             "multiplier": "0.2"
           }
         },
@@ -79,8 +79,8 @@
           "window": "128K",
           "recommend": 10,
           "price": {
-            "input": 9,
-            "output": "22.5",
+            "input": "5",
+            "output": "15",
             "multiplier": "0.6"
           }
         },
@@ -91,8 +91,8 @@
           "window": "128K",
           "recommend": 8,
           "price": {
-            "input": "16",
-            "output": "48",
+            "input": "10",
+            "output": "30",
             "multiplier": "0.2"
           }
         },
@@ -103,8 +103,8 @@
           "window": "128K",
           "recommend": 8,
           "price": {
-            "input": "16",
-            "output": "48",
+            "input": "10",
+            "output": "30",
             "multiplier": "0.2"
           }
         },
@@ -115,8 +115,8 @@
           "window": "128K",
           "recommend": 9,
           "price": {
-            "input": "32",
-            "output": "96",
+            "input": "10",
+            "output": "30",
             "multiplier": "0.3"
           }
         },
@@ -127,8 +127,8 @@
           "window": "200K",
           "recommend": 9,
           "price": {
-            "input": "32",
-            "output": "96",
+            "input": "10",
+            "output": "30",
             "multiplier": "0.5"
           }
         },
@@ -139,9 +139,9 @@
           "window": "200K",
           "recommend": 10,
           "price": {
-            "input": "10",
-            "output": "50",
-            "multiplier": "0.4"
+            "input": "3",
+            "output": "15",
+            "multiplier": "0.2"
           }
         },
         {
@@ -151,9 +151,9 @@
           "window": "200K",
           "recommend": 2,
           "price": {
-            "input": "12",
-            "output": "60",
-            "multiplier": "0.4"
+            "input": "3",
+            "output": "15",
+            "multiplier": "0.2"
           }
         },
         {
@@ -163,9 +163,9 @@
           "window": "200K",
           "recommend": 2,
           "price": {
-            "input": "12",
-            "output": "60",
-            "multiplier": "0.4"
+            "input": "3",
+            "output": "15",
+            "multiplier": "0.2"
           }
         },
         {
@@ -175,9 +175,9 @@
           "window": "200K",
           "recommend": 9,
           "price": {
-            "input": "32",
-            "output": "160",
-            "multiplier": "0.2"
+            "input": "15",
+            "output": "75",
+            "multiplier": "0.5"
           }
         },
         {
@@ -187,9 +187,9 @@
           "window": "200K",
           "recommend": 9,
           "price": {
-            "input": "32",
-            "output": "160",
-            "multiplier": "0.4"
+            "input": "15",
+            "output": "75",
+            "multiplier": "0.8"
           }
         },
         {
@@ -199,8 +199,8 @@
           "window": "32K",
           "recommend": 4,
           "price": {
-            "input": "24",
-            "output": "48",
+            "input": "10",
+            "output": "20",
             "multiplier": "0.2"
           }
         },
@@ -211,8 +211,8 @@
           "window": "32K",
           "recommend": 4,
           "price": {
-            "input": "24",
-            "output": "48",
+            "input": "10",
+            "output": "20",
             "multiplier": "0.2"
           }
         }
@@ -230,20 +230,20 @@
           "window": "1M",
           "recommend": 5,
           "price": {
-            "input": "0.4",
-            "output": "1.2",
-            "multiplier": "0.2"
+            "input": "0.35",
+            "output": "0.70",
+            "multiplier": "0.1"
           }
         },
         {
           "name": "gemini-1.5-pro",
           "upstream": "普通",
           "description": "Google的先进GPT,成本相对低廉,适用于复杂的任务",
-          "window": "128K",
+          "window": "32K",
           "recommend": 5,
           "price": {
-            "input": "9",
-            "output": "27",
+            "input": "3.5",
+            "output": "7",
             "multiplier": "0.2"
           }
         },
@@ -266,9 +266,9 @@
           "window": "32K",
           "recommend": 6,
           "price": {
-            "input": "1.2",
-            "output": "1.2",
-            "multiplier": ""
+            "input": "1",
+            "output": "2",
+            "multiplier": "1.1"
           }
         },
         {
@@ -278,9 +278,9 @@
           "window": "32K",
           "recommend": 6,
           "price": {
-            "input": "1.2",
-            "output": "1.2",
-            "multiplier": ""
+            "input": "1",
+            "output": "2",
+            "multiplier": "1.1"
           }
         }
       ]
@@ -299,7 +299,7 @@
           "price": {
             "input": "14",
             "output": "14",
-            "multiplier": ""
+            "multiplier": "1.1"
           }
         },
         {
@@ -309,28 +309,16 @@
           "window": "128K",
           "recommend": 1,
           "price": {
-            "input": "1",
-            "output": "3",
+            "input": "0.5",
+            "output": "1.5",
             "multiplier": "0.2"
           }
         },
         {
-          "name": "qwen-1.5-32b",
+          "name": "qwen2-72b-instruct",
           "upstream": "官方",
-          "description": "阿里云研发的开源国产通义千问1.5开源大模型系列",
-          "window": "32K",
-          "recommend": 1,
-          "price": {
-            "input": "3",
-            "output": "3",
-            "multiplier": ""
-          }
-        },
-        {
-          "name": "qwen-1.5-72b",
-          "upstream": "官方",
-          "description": "阿里云研发的开源国产通义千问1.5开源大模型系列",
-          "window": "32K",
+          "description": "阿里云研发的开源国产通义千问2开源大模型系列",
+          "window": "128K",
           "recommend": 1,
           "price": {
             "input": "8",
@@ -339,7 +327,7 @@
           }
         },
         {
-          "name": "qwen-1.5-110b",
+          "name": "qwen1.5-110b-chat",
           "upstream": "官方",
           "description": "阿里云研发的开源国产通义千问1.5开源大模型系列",
           "window": "32K",
@@ -363,30 +351,6 @@
           }
         },
         {
-          "name": "@cf/meta/llama-3-8b-instruct-awq",
-          "upstream": "官方",
-          "description": "Meta的LLAMA智能助手，8b参数，可以扩展人们完成任务、创造和连接的方式",
-          "window": "8K",
-          "recommend": 1,
-          "price": {
-            "input": "0.01",
-            "output": "0.01",
-            "multiplier": "0.01"
-          }
-        },
-        {
-          "name": "@hf/mistral/mistral-7b-instruct-v0.2",
-          "upstream": "官方",
-          "description": "Mistral 7B 量化模型，用于指令任务",
-          "window": "8K",
-          "recommend": 1,
-          "price": {
-            "input": "0.01",
-            "output": "0.01",
-            "multiplier": "0.01"
-          }
-        },
-        {
           "name": "@cf/qwen/qwen1.5-14b-chat-awq",
           "upstream": "官方",
           "description": "Qwen 1.5 14B 量化模型，用于聊天任务",
@@ -407,7 +371,7 @@
           "price": {
             "input": "19.2",
             "output": "19.2",
-            "multiplier": ""
+            "multiplier": "1"
           }
         },
         {
@@ -419,7 +383,7 @@
           "price": {
             "input": "19.2",
             "output": "19.2",
-            "multiplier": ""
+            "multiplier": "1"
           }
         }
       ]
