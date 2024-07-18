@@ -37,15 +37,18 @@
       <el-button type="success" @click="openWebAppPro">点我开始使用(WebApp Pro)</el-button>
       <el-button type="warning" @click="OpenAbout">使用技巧</el-button>
       <div>
-        <small>PlayGround 娱乐模式，加载所有可用模型（稳定性一般，价格便宜）</small></div>
+        <small>PlayGround 娱乐版（加载所有目前可用模型）</small></div>
       <div>
-        <small> Pro 生产模式，仅加载官方生产力模型（相对昂贵，接近官方价格但稳定）</small>
+        <small>Pro 生产版（仅加载成熟且稳定的模型）</small>
+      </div>
+      <div>
+        <small> PlayGround中带有Eco为逆向方式得到的模型，比正式模型的折后价更便宜但降低了稳定性，阉割了部分功能，只适合小量使用。</small>
       </div>
       <div>
         <small style="color:red"> 如果您是初次接触改产品，强烈建议阅读"使用技巧"来达到以最优的成本使用AI</small>
       </div>
       <div>
-        <small style="color:red"> 灵车API不能完全确保稳定性，如果出现模型失效、过于卡顿(一分钟以上)、无效扣费等情况，请在群内反馈和获得补偿</small>
+        <small style="color:red"> 灵车API不能完全确保稳定性，如果出现模型失效、过于卡顿(一分钟以上)、无效扣费等情况，请在群内反馈和获得补偿。反馈官网客服没有用，官网客服仅处理机场问题</small>
     </div>
     </div>
 

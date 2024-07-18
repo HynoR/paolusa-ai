@@ -75,7 +75,7 @@
         {
           "name": "gpt-4o-2024-05-13",
           "upstream": "普通",
-          "description": "(推荐) GPT-4 Omni 是 OpenAI 当前最先进,多模态的旗舰模型,比 GPT-4 Turbo 更便宜、更快。官号渠道稳定版，lobeChat中带有V标注",
+          "description": "(推荐) GPT-4 Omni 是 OpenAI 当前最先进,多模态的旗舰模型,比 GPT-4 Turbo 更便宜、更快。官号渠道稳定版。",
           "window": "128K",
           "recommend": 10,
           "price": {
@@ -226,7 +226,7 @@
         {
           "name": "gemini-1.5-flash",
           "upstream": "官方",
-          "description": "Google的GPT,成本更低廉,速度较快,适用于日常任务（由于渠道未打通，该模型禁止并发）",
+          "description": "Google的GPT,成本更低廉,速度较快,适用于日常任务（禁止并发）",
           "window": "1M",
           "recommend": 5,
           "price": {
@@ -239,7 +239,7 @@
           "name": "gemini-1.5-pro",
           "upstream": "普通",
           "description": "Google的先进GPT,成本相对低廉,适用于复杂的任务",
-          "window": "32K",
+          "window": "128K",
           "recommend": 5,
           "price": {
             "input": "3.5",
