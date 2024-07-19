@@ -6,6 +6,30 @@
       "description": "当下最流行，适用于简单任务的AI模型。适用于常规对话/沉浸式翻译/一般任务等 (可并发)",
       "models": [
         {
+          "name": "gpt-4o-mini",
+          "upstream": "普通",
+          "description": "(推荐)GPT-4o mini 是OpenAI最具成本效益的小型模型，它比 GPT-3.5 Turbo 更智能、价格更低，并且具备视觉能力。该模型拥有 128K 上下文窗口，知识库截止于 2023 年 10 月。",
+          "window": "128K",
+          "recommend": "5",
+          "price": {
+            "input": "0.15",
+            "output": "0.60",
+            "multiplier": "0.2"
+          }
+        },
+        {
+          "name": "gpt-4o-mini-2024-07-18",
+          "upstream": "普通",
+          "description": "(推荐)GPT-4o mini 是OpenAI最具成本效益的小型模型，它比 GPT-3.5 Turbo 更智能、价格更低，并且具备视觉能力。该模型拥有 128K 上下文窗口，知识库截止于 2023 年 10 月。",
+          "window": "128K",
+          "recommend": "5",
+          "price": {
+            "input": "0.15",
+            "output": "0.60",
+            "multiplier": "0.2"
+          }
+        },
+        {
           "name": "claude-3-haiku",
           "upstream": "普通",
           "description": "(推荐)Haiku是Anthropic最快速、最紧凑的模型，能提供近乎即时的响应。它能以无与伦比的速度回答简单的查询和请求。用户将能够构建无缝的AI体验，模仿人类的互动。",
@@ -32,9 +56,9 @@
         {
           "name": "gpt-3.5-turbo",
           "upstream": "普通",
-          "description": "GPT-3.5 Turbo 模型是OpenAI快速、经济的模型，适用于简单任务。它具有 16K 的上下文窗口，并针对对话进行了优化。 指令模型支持 4K 的上下文窗口。",
+          "description": "[过时]GPT-3.5 Turbo 模型是OpenAI快速、经济的模型，适用于简单任务。它具有 16K 的上下文窗口，并针对对话进行了优化。 指令模型支持 4K 的上下文窗口。",
           "window": "16K",
-          "recommend": 4,
+          "recommend": 2,
           "price": {
             "input": "0.5",
             "output": "1.5",
@@ -44,9 +68,9 @@
         {
           "name": "gpt-3.5-turbo-0125",
           "upstream": "普通",
-          "description": "GPT-3.5 Turbo 模型是OpenAI快速、经济的模型，适用于简单任务。它具有 16K 的上下文窗口，并针对对话进行了优化。 指令模型支持 4K 的上下文窗口。",
+          "description": "[过时]GPT-3.5 Turbo 模型是OpenAI快速、经济的模型，适用于简单任务。它具有 16K 的上下文窗口，并针对对话进行了优化。 指令模型支持 4K 的上下文窗口。",
           "window": "16K",
-          "recommend": 4,
+          "recommend": 2,
           "price": {
             "input": "0.5",
             "output": "1.5",
