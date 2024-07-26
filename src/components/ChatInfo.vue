@@ -33,16 +33,13 @@
     />
     <div class="quick-actions">
       <h4>一键使用：</h4>
-      <el-button type="success" @click="openWebApp">点我开始使用(WebApp PlayGround)</el-button>
-      <el-button type="success" @click="openWebAppPro">点我开始使用(WebApp Pro)</el-button>
+      <el-button type="success" @click="openWebAppPro">点我开始使用(WebApp)</el-button>
       <el-button type="warning" @click="OpenAbout">使用技巧</el-button>
       <div>
-        <small>PlayGround 娱乐版（加载所有目前可用模型）</small></div>
-      <div>
-        <small>Pro 生产版（仅加载成熟且稳定的模型）</small>
+        <small> 带有Eco为逆向方式得到的模型，比正式模型的折后价更便宜但降低了稳定性，阉割了部分功能，只适合小量使用。</small>
       </div>
       <div>
-        <small> PlayGround中带有Eco为逆向方式得到的模型，比正式模型的折后价更便宜但降低了稳定性，阉割了部分功能，只适合小量使用。</small>
+        <small> PlayGround WebApp已停止维护，未来将继续使用Pro版本 chat.nloli.xyz 作为更新主线。</small>
       </div>
       <div>
         <small style="color:red"> 如果您是初次接触改产品，强烈建议阅读"使用技巧"来达到以最优的成本使用AI</small>
@@ -55,6 +52,7 @@
     <div class="other-clients">
       <h4>其他客户端：</h4>
       <el-button type="primary" @click="openNextChat">使用NextChat网页</el-button>
+      <el-button type="success" @click="openWebApp">使用LobeChat(WebApp PlayGround)</el-button>
       <el-button type="primary" @click="openBotGem">使用BotGem客户端(Android)</el-button>
       <el-button type="primary" @click="openOpenCat">使用OpenCat客户端(macOS、iOS)</el-button>
       <el-button type="primary" @click="openMidjounary">使用MidJourney绘图网页端</el-button>
