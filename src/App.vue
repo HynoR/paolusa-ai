@@ -73,8 +73,11 @@ const getInfo = async () => {
       userInfoLoaded.value = true
     }
   } catch (error) {
-    ElMessage.error('获取信息失败: ' + error.message);
-  }
+    if (error.response && error.response.status === 400) {
+      ElMessage.error('请求无效: ' + error.response.data.msg);
+    } else {
+      ElMessage.error('获取信息失败: ' + error.message);
+    }}
 }
 
 const Apply= async () => {
@@ -91,8 +94,11 @@ const Apply= async () => {
       }, 2000)
     }
   } catch (error) {
-    ElMessage.error('获取信息失败: ' + error.message);
-  }
+    if (error.response && error.response.status === 400) {
+      ElMessage.error('请求无效: ' + error.response.data.msg);
+    } else {
+      ElMessage.error('获取信息失败: ' + error.message);
+    }}
 }
 
 const activeIndex = ref('1')
