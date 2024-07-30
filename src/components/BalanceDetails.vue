@@ -190,7 +190,7 @@ async function syncChatKey() {
 
   syncLoading.value = true;
   try {
-    const response = await axios.post('https://labapi.nloli.xyz/tako_web/gpt_sync', { token:ctoken, turn_site_payload: cloudflare_token });
+    const response = await axios.post('https://labapi.nloli.xyz/tako_web/gpt_reset', { token:ctoken, turn_site_payload: cloudflare_token });
     ElMessage.success(response.data);
 
   } catch (error) {
