@@ -23,7 +23,9 @@
 
         </el-card>
         <router-view v-if="userInfoLoaded"></router-view>
-        <div v-else>Loading...（如未加载数据,可尝试点击上方的刷新数据按钮）</div>
+        <div v-else>Loading...（如未加载数据,可尝试点击上方的刷新数据按钮）
+        <div>第一次使用？<el-button @click="Apply">点我申请账户</el-button></div>
+        </div>
       </el-main>
     </el-container>
   </div>
@@ -69,6 +71,24 @@ const getInfo = async () => {
       SetUserInfo(userInfo)
       ElMessage.success('获取信息成功');
       userInfoLoaded.value = true
+    }
+  } catch (error) {
+    ElMessage.error('获取信息失败: ' + error.message);
+  }
+}
+
+const Apply= async () => {
+  try {
+    const response = await axios.get('https://labapi.nloli.xyz/tako_web/gpt_info?apply=true&token=' + token.value);
+    const userInfo = response.data;
+    if (userInfo && userInfo.api_key.length > 0) {
+      SetUserInfo(userInfo)
+      ElMessage.success('获取成功');
+      userInfoLoaded.value = true
+      // 等待两秒刷新
+      setTimeout(() => {
+        window.location.reload()
+      }, 2000)
     }
   } catch (error) {
     ElMessage.error('获取信息失败: ' + error.message);
