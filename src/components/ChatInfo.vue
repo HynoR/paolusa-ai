@@ -14,6 +14,7 @@
       <el-descriptions-item label="OpenAI接口地址">
         <p>默认地址：<span style="color:#E2943B">{{ apiHost }}</span></p>
         <p>大陆备用: <span style="color:#E2943B">{{ apiHostBackup }}</span></p>
+        <p>大陆备用2: <span style="color:#E2943B"> https://visa-hkapp-api.mujika.xyz </span></p>
         <p>lobeChat和某些软件需要额外在地址后面加上 /v1 或者完整的 /v1/chat/completions</p>
         <p>接口网络默认为CloudflareCDN，如大陆直连可尝试更换接口地址到大陆备用地址</p>
       </el-descriptions-item>
