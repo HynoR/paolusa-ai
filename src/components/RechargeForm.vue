@@ -97,13 +97,13 @@ const handleSubmit = async () => {
     emit('recharge', { amount: form.amount });
 
   } catch (error) {
-    ElMessage.error('充值失败: ' + (error.response?.data || error.message));
+    ElMessage.error('充值失败: ' + (error.response?.data.msg || error.message));
   } finally {
     loading.value = false;
     window.sessionStorage.removeItem('userInfo')
     setTimeout(() => {
       window.location.reload();
-    }, 3000);
+    }, 4000);
   }
 };
 </script>
