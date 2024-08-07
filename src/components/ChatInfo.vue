@@ -143,12 +143,12 @@ const toggleChatKey = () => {
 };
 
 const openWebApp = () => {
-  let lobe = `{"keyVaults":{"openai":{"apiKey":"${apiKey.value}","baseURL":"${apiHost.value}/v1"}},"languageModel":{"openai":{"fetchOnClient":true}},"systemAgent":{"topic":{"model":"gemini-1.5-flash","provider":"openai"}}}`;
+  const lobe = `{"keyVaults":{"openai":{"apiKey":"${apiKey.value}","baseURL":"${apiHost.value}/v1"}},"languageModel":{"openai":{"fetchOnClient":true}},"systemAgent":{"topic":{"model":"gemini-1.5-flash","provider":"openai"}}}`;
   window.open('https://gpt2.nloli.xyz/?settings=' + encodeURIComponent(lobe), '_blank');
 };
 
 const openWebAppPro = () => {
-  let lobe = `{"keyVaults":{"openai":{"apiKey":"${apiKey.value}","baseURL":"${apiHostBackup.value}/v1"}},"languageModel":{"openai":{"fetchOnClient":true}},"systemAgent":{"topic":{"model":"gemini-1.5-flash","provider":"openai"}}}`;
+  const lobe = `{"keyVaults":{"openai":{"apiKey":"${apiKey.value}"}},"languageModel":{"openai":{"fetchOnClient":false}},"systemAgent":{"topic":{"model":"gemini-1.5-flash","provider":"openai"}}}`;
   window.open('https://chat.nloli.xyz/?settings=' + encodeURIComponent(lobe), '_blank');
 };
 
