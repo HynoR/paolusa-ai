@@ -6,10 +6,10 @@
       </div>
     </template>
 
-    <template #default>
+    <template #default >
       <small>此工具用于估算文本的Token数量，以便更好地了解模型的消耗情况。如果输入内容超过了模型窗口，模型可能不会回应且计费系统仍会扣费！</small>
       <div style="margin-top: 10px">
-        <iframe src="https://gpt-tokenizer.dev/" width="100%" height="100%" ></iframe>
+        <iframe src="https://gpt-tokenizer.dev/" width="100%" height="880px" ></iframe>
       </div>
     </template>
   </el-card>
