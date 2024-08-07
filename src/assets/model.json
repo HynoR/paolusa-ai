@@ -65,7 +65,7 @@
           "upstream": "灵车",
           "description": "(推荐) GPT-4 Omni 是 OpenAI 当前最先进,多模态的旗舰模型,比 GPT-4 Turbo 更便宜、更快。灵车版。",
           "window": "128K",
-          "recommend": 10,
+          "recommend": 9,
           "price": {
             "input": "5",
             "output": "15",
@@ -77,11 +77,23 @@
           "upstream": "普通",
           "description": "(推荐) GPT-4 Omni 是 OpenAI 当前最先进,多模态的旗舰模型,比 GPT-4 Turbo 更便宜、更快。官号渠道稳定版。",
           "window": "128K",
-          "recommend": 10,
+          "recommend": 9,
           "price": {
             "input": "5",
             "output": "15",
             "multiplier": "0.6"
+          }
+        },
+        {
+          "name": "gpt-4o-2024-08-06",
+          "upstream": "普通",
+          "description": "(推荐) GPT-4 Omni 是 OpenAI 当前最先进,多模态的旗舰模型,比 GPT-4 Turbo 更便宜、更快。官号渠道稳定版。",
+          "window": "128K",
+          "recommend": 10,
+          "price": {
+            "input": "2.5",
+            "output": "10",
+            "multiplier": "0.5"
           }
         },
         {
