@@ -2,7 +2,7 @@
 
       <el-card>
         <template #header>
-          <h2>AI 图像生成 (Beta)</h2>
+          <h3>WorkerAI 图像生成 (Beta)</h3>
         </template>
         <el-form @submit.prevent="generateImage" label-position="top">
           <el-form-item label="选择免费模型">
@@ -36,19 +36,55 @@
           </template>
         </el-image>
       </el-card>
+  <el-card style="margin-top: 20px;" >
+    <h3>MidJourney <el-tag>0.35/4张(绘图，重绘，变换)</el-tag> <el-tag>0.1/次(放大,描述)</el-tag></h3>
 
+    <div>
+      请自行填入密钥和API地址，MJ绘图商业模型拒绝生成有害、色情、仇恨、暴力等内容图像，部分功能暂不稳定，如有问题请在群内反馈。
+      测试功能，反代极不稳定，使用前请加群，如果生成图片失败，请联系群主查看失败原因和回退余额。文字生图网站,由于官方反代，绘图一次需要1-10分钟，视负载程度而定，可提交任务后一会再来查看。
+    </div>
+    <el-button style="margin-top: 20px;"  type="primary" @click="openMidjounary">使用MidJourney绘图</el-button>
+  </el-card>
+
+  <el-card style="margin-top: 20px;">
+    <h3>Flux.1 <el-tag>0.45/张(Pro模型绘图)</el-tag></h3>
+    <div>
+      新强大绘图模型。Pro/Dev/Schnell 三个版本，Pro版本最强大，Dev版本其次，Schnell牺牲质量换取速度。
+       </div>
+    <div>
+      <a href="https://siliconflow.cn/" target="_blank"> <el-button style="margin-top: 20px;"  type="primary">免费使用Dev/Schnell绘图</el-button></a>
+
+    </div> <div>
+
+  <el-button style="margin-top: 20px;"  type="primary" disabled>三方接入Pro绘图（咕咕咕...）</el-button>
+  </div>
+
+  </el-card>
+  <el-card style="margin-top: 20px;">
+    <h3>DALL-E 3 <el-tag>0.06-0.12/张(普通)</el-tag> <el-tag>0.12-0.18/张(HD)</el-tag></h3>
+    <div style="margin-top: 20px">
+      DALL-E 3 是由OpenAI研究的强大的图像生成模型。
+    </div>
+    <div>
+      请自行填入密钥和API地址，OpenAI商业模型拒绝生成有害、色情、仇恨、暴力等内容图像，如有问题请在群内反馈。<br>
+      可使用下方的网站使用，或者在Lobechat通过GPT插件调用（调用时一定要说明图片数量）。
+   </div>
+    <el-button style="margin-top: 20px;"  type="primary" @click="openMidjounary">使用DALL-E 3绘图</el-button>
+  </el-card>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue';
 import { ElMessage } from 'element-plus';
 
-export default {
-  setup() {
+
     const model = ref('0');
     const prompt = ref('');
     const imageUrl = ref('');
     const loading = ref(false);
+    const openMidjounary = () => {
+      window.open('https://mjchat.nloli.xyz/#/draw/1002', '_blank');
+    };
 
     const generateImage = async () => {
       if (!prompt.value) {
@@ -84,15 +120,8 @@ export default {
       }
     };
 
-    return {
-      model,
-      prompt,
-      imageUrl,
-      loading,
-      generateImage,
-    };
-  },
-};
+
+
 </script>
 
 <style scoped>

@@ -56,7 +56,7 @@
       <el-button type="success" @click="openWebApp">使用LobeChat(WebApp PlayGround)</el-button>
       <el-button type="primary" @click="openBotGem">使用BotGem客户端(Android)</el-button>
       <el-button type="primary" @click="openOpenCat">使用OpenCat客户端(macOS、iOS)</el-button>
-      <el-button type="primary" @click="openMidjounary">使用MidJourney绘图网页端</el-button>
+
     </div>
 
     <div class="integration">
@@ -164,9 +164,7 @@ const openOpenCat = () => {
   window.open('opencat://team/join?domain=' + apiHost.value + '&key=' + apiKey.value, '_blank');
 };
 
-const openMidjounary = () => {
-  window.open('https://mjchat.nloli.xyz/#/draw/1002', '_blank');
-};
+
 
 const openWiki = () => {
   window.open('https://github.com/deepseek-ai/awesome-deepseek-integration/blob/main/README_cn.md', '_blank');

@@ -2,7 +2,7 @@
   <div class="container">
     <el-container>
       <el-header>
-        <h5>ChatAPI Beta V2@build-07151021 | <el-button @click="refreshUserInfo">刷新数据</el-button></h5>
+        <h5>ChatAPI Beta V2@build-08061021 | <el-button @click="refreshUserInfo">刷新数据</el-button></h5>
 
       </el-header>
 
@@ -10,14 +10,12 @@
         <el-card>
           <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleClick">
             <el-menu-item index="1">详情页</el-menu-item>
-
             <el-menu-item index="2">模型信息</el-menu-item>
             <el-menu-item index="3">額度詳情</el-menu-item>
             <el-menu-item index="4">充值额度</el-menu-item>
             <el-menu-item index="5">使用技巧&关于</el-menu-item>
             <el-menu-item index="6">工具-Token计算器</el-menu-item>
-            <el-menu-item index="7">工具-文生图</el-menu-item>
-
+            <el-menu-item index="7">文生图</el-menu-item>
 
           </el-menu>
 
