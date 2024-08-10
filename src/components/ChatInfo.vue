@@ -143,12 +143,12 @@ const toggleChatKey = () => {
 };
 
 const openWebApp = () => {
-  const lobe = `{"keyVaults":{"openai":{"apiKey":"${apiKey.value}","baseURL":"${apiHost.value}/v1"}},"languageModel":{"openai":{"fetchOnClient":true}}}`;
+  const lobe = `{"keyVaults":{"openai":{"apiKey":"${apiKey.value}","baseURL":"${apiHost.value}/v1"}},"languageModel":{"openai":{"fetchOnClient":true}}odel":"gpt-4o-mini-re","provider":"openai"}}}`;
   window.open('https://gpt2.nloli.xyz/?settings=' + encodeURIComponent(lobe), '_blank');
 };
 
 const openWebAppPro = () => {
-  const lobe = `{"keyVaults":{"openai":{"apiKey":"${apiKey.value}"}},"languageModel":{"openai":{"fetchOnClient":false}}}`;
+  const lobe = `{"keyVaults":{"openai":{"apiKey":"${apiKey.value}"}},"languageModel":{"openai":{"fetchOnClient":false}},"systemAgent":{"topic":{"model":"gpt-4o-mini-re","provider":"openai"}}}`;
   window.open('https://chat.nloli.xyz/?settings=' + encodeURIComponent(lobe), '_blank');
 };
 
