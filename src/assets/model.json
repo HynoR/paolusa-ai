@@ -248,6 +248,30 @@
           }
         },
         {
+          "name": "gemini-1.5-pro-exp-0801",
+          "upstream": "普通",
+          "description": "Google的先进GPT,支持多模态,适用于复杂的任务",
+          "window": "128K",
+          "recommend": 5,
+          "price": {
+            "input": "3.5",
+            "output": "7",
+            "multiplier": "0.2"
+          }
+        },
+        {
+          "name": "llama-3.1-70b-versatile",
+          "upstream": "普通",
+          "description": "Facebook的LLAMA智能助手,70b参数,可以扩展人们完成任务、创造和连接的方式",
+          "window": "128K",
+          "recommend": 5,
+          "price": {
+            "input": "3.5",
+            "output": "7",
+            "multiplier": "0.2"
+          }
+        },
+        {
           "name": "command-r-plus",
           "upstream": "官方",
           "description": "Cohere的新一代先进GPT,更聪明且无审查过滤器(不限制NSFW和敏感内容),可以自由的畅所欲言，酒馆等角色扮演聊天。",
@@ -255,8 +279,8 @@
           "recommend": 5,
           "price": {
             "input": "3",
-            "output": "15",
-            "multiplier": "0.2"
+            "output": "3",
+            "multiplier": "1"
           }
         },
         {
@@ -360,18 +384,6 @@
             "input": "0.01",
             "output": "0.01",
             "multiplier": "0.01"
-          }
-        },
-        {
-          "name": "llama-3-70b-chat",
-          "upstream": "官方",
-          "description": "Meta的LLAMA智能助手，70b参数，可以扩展人们完成任务、创造和连接的方式",
-          "window": "8K",
-          "recommend": 1,
-          "price": {
-            "input": "19.2",
-            "output": "19.2",
-            "multiplier": "1"
           }
         },
         {
