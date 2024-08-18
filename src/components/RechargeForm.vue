@@ -29,9 +29,9 @@
       </el-form-item>
       <el-alert type="warning" class="estimates">
         <p><small>充值金额相当于(按照消耗均值 3K Token 粗略估计,实际可用次数以使用为准)</small></p>
-        <p><small>GPT-4o 对话 约{{ estimates.gpt4o }}次 | GPT-4 对话 约{{ estimates.gpt4 }}次</small></p>
-        <p><small>GPT-3.5 or Haiku 对话/沉浸式翻译 约{{ estimates.cheap }}次</small></p>
-        <p><small>生产力模型 约{{ estimates.manual }}次 | 专家模型 约{{ estimates.pro }}次</small></p>
+        <p><small>(热门模型) GPT-4o / Claude 3.5 Sonnet 约{{ estimates.gpt4o }}次 </small></p>
+        <p><small>(复杂模型) GPT-4 Turbo / Claude 3 Opus 对话 约{{ estimates.gpt4 }}次</small></p>
+        <p><small>(简单模型) GPT-4o mini / Haiku 对话/沉浸式翻译 约{{ estimates.cheap }}次</small></p>
         <p><small>绘图 模型 约{{ estimates.paint }}张 | 文字转语音 约{{ estimates.whisper }}分钟</small></p>
       </el-alert>
 
@@ -58,8 +58,6 @@ const estimates = reactive({
   gpt4o: 0,
   gpt4: 0,
   cheap: 0,
-  manual: 0,
-  pro: 0,
   paint: 0,
   whisper: 0
 });
@@ -70,11 +68,9 @@ onMounted(() => {
 
 const calculateEstimates = () => {
   const amount = form.amount;
-  estimates.gpt4o = Math.floor(amount / 0.02103);
-  estimates.gpt4 = Math.floor(amount / 0.05229);
-  estimates.cheap = Math.floor(amount / 0.001452);
-  estimates.manual = Math.floor(amount / 0.03023);
-  estimates.pro = Math.floor(amount / 0.2204);
+  estimates.gpt4o = Math.floor(amount / 0.03103);
+  estimates.gpt4 = Math.floor(amount / 0.08229);
+  estimates.cheap = Math.floor(amount / 0.000852);
   estimates.paint = Math.floor(amount / 0.15);
   estimates.whisper = Math.floor(amount / 0.009);
 };
