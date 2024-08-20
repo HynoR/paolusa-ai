@@ -6,6 +6,7 @@ import RechargeForm from './components/RechargeForm.vue'
 import { createRouter,createWebHashHistory } from 'vue-router'
 import TiktokenPage from "./components/TiktokenPage.vue";
 import SDXLPage from "./components/SDXLPage.vue";
+import Flux1Page from "./components/Flux1.vue";
 const routes = [
     { path: '/', component: ChatInfo},
     { path: '/info', component: ChatInfo},
@@ -15,7 +16,8 @@ const routes = [
     { path: '/recharge', component: RechargeForm},
     { path: '/about', component: WarningInfo},
     { path: '/tiktoken',component: TiktokenPage},
-    { path: '/sdxl',component: SDXLPage}
+    { path: '/sdxl',component: SDXLPage},
+    {path: '/flux1',component: Flux1Page}
 
 
 

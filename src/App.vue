@@ -16,11 +16,14 @@
             <el-menu-item index="5">使用技巧&关于</el-menu-item>
             <el-menu-item index="6">工具-Token计算器</el-menu-item>
             <el-menu-item index="7">文生图</el-menu-item>
+            <el-menu-item index="9">共享GPT账号</el-menu-item>
+
+<!--            <el-menu-item index="8">Flux1</el-menu-item>-->
 
           </el-menu>
 
         </el-card>
-        <router-view v-if="userInfoLoaded"></router-view>
+        <router-view v-if="!userInfoLoaded"></router-view>
         <div v-else>Loading...（如未加载数据,可尝试点击上方的刷新数据按钮）
         <div>第一次使用？<el-button @click="Apply">点我申请账户</el-button></div>
         </div>
@@ -135,6 +138,12 @@ const handleClick = (key, keyPath) => {
       break
     case '7':
       router.push('/sdxl?token=' + token.value)
+      break
+    case '8':
+      router.push('/flux1?token=' + token.value)
+      break
+    case '9':
+      window.location.href = "https://app.nloli.xyz/cld/";
       break
     default:
       break
