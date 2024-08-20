@@ -23,7 +23,7 @@
           </el-menu>
 
         </el-card>
-        <router-view v-if="!userInfoLoaded"></router-view>
+        <router-view v-if="userInfoLoaded"></router-view>
         <div v-else>Loading...（如未加载数据,可尝试点击上方的刷新数据按钮）
         <div>第一次使用？<el-button @click="Apply">点我申请账户</el-button></div>
         </div>
