@@ -27,6 +27,7 @@
           <el-button type="success" @click="syncChatKey" :loading="syncLoading">同步ChatKey</el-button>
           <el-button type="danger" disabled>重置ChatKey(开发中...)</el-button>
         </div>
+        <p><strong>如需重置key请找客服</strong></p>
         <p><strong>* 如果您未拥有某些新更新的模型的使用权限, 可以点击上方同步按钮同步可用模型</strong></p>
         <p><strong>** 如果您在Paoluz续费了套餐, 请点击同步按钮同步获得额外的免费余额</strong></p>
         <div id="turnstile-container"></div>
