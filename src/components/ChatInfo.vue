@@ -52,6 +52,7 @@
     <div class="other-clients">
       <h4>其他客户端：</h4>
       <el-button type="primary" @click="openNextChat">使用NextChat网页</el-button>
+      <a href="https://chatboxai.app/zh" target="_blank"><el-button type="primary">使用ChatBox For Mac</el-button></a>
       <el-button type="success" @click="openWebApp">使用LobeChat(WebApp PlayGround)</el-button>
       <el-button type="primary" @click="openBotGem">使用BotGem客户端(Android)</el-button>
       <el-button type="primary" @click="openOpenCat">使用OpenCat客户端(macOS、iOS)</el-button>
