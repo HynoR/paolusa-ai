@@ -66,6 +66,14 @@
 
   </el-card>
   <el-card style="margin-top: 20px;">
+    <h3>Ideogram <el-tag>Free</el-tag></h3>
+    <div style="margin-top: 20px">
+      Ideo2.0是新一代图片生成模型，支持多种图片生成功能。
+    </div>
+    <a href="https://ideogram.ai/" target="_blank"> <el-button style="margin-top: 20px;"  type="primary">免费使用Ideogram</el-button></a>
+  </el-card>
+
+  <el-card style="margin-top: 20px;">
     <h3>DALL-E 3 <el-tag>0.06-0.12/张(普通)</el-tag> <el-tag>0.12-0.18/张(HD)</el-tag></h3>
     <div style="margin-top: 20px">
       DALL-E 3 是由OpenAI研究的强大的图像生成模型。
