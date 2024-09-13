@@ -75,7 +75,7 @@
         {
           "name": "gpt-4o/gpt-4o-2024-05-13",
           "upstream": "普通",
-          "description": "(推荐) GPT-4 Omni 是 OpenAI 当前最先进,多模态的旗舰模型,比 GPT-4 Turbo 更智能、更便宜、更快。官号渠道稳定版。",
+          "description": "(推荐) GPT-4 Omni 是 OpenAI 当前最先进,多模态的旗舰模型,比 GPT-4 Turbo 更智能、更便宜、更快。",
           "window": "128K",
           "recommend": 10,
           "price": {
@@ -87,7 +87,7 @@
         {
           "name": "gpt-4o-2024-08-06",
           "upstream": "普通",
-          "description": "(推荐) GPT-4 Omni 是 OpenAI 当前最先进,多模态的旗舰模型,比 GPT-4 Turbo 更智能、更便宜、更快。官号渠道稳定版。",
+          "description": "(推荐) GPT-4 Omni 是 OpenAI 当前最先进,多模态的旗舰模型，0806降低了输入和输出的成本，相比 0513 版本更具高效性和功能性",
           "window": "128K",
           "recommend": 10,
           "price": {
