@@ -53,7 +53,7 @@
           "upstream": "普通",
           "description": "优化用于科学、数学和编程推理任务，成本比 O1 Preview 低 80%，速度更快，更适合需要高效推理的应用",
           "window": "128K",
-          "recommend": 9,
+          "recommend": 8,
           "price": {
             "input": "3",
             "output": "12",
@@ -61,11 +61,11 @@
           }
         },
         {
-          "name": "o1-preview/o1-preview-2024-09-12",
+          "name": "o1-preview / o1-preview-2024-09-12",
           "upstream": "普通",
-          "description": "增强的推理模型，擅长解决复杂问题，适合科学、数学和编程等领域的高难度任务，成本机器高昂",
+          "description": "增强的推理模型，擅长解决复杂问题，适合科学、数学和编程等领域的高难度任务，成本极其高昂",
           "window": "128K",
-          "recommend": 7,
+          "recommend": 8,
           "price": {
             "input": "15",
             "output": "60",
@@ -73,7 +73,7 @@
           }
         },
         {
-          "name": "gpt-4o/gpt-4o-2024-05-13",
+          "name": "gpt-4o / gpt-4o-2024-05-13",
           "upstream": "普通",
           "description": "(推荐) GPT-4 Omni 是 OpenAI 当前最先进,多模态的旗舰模型,比 GPT-4 Turbo 更智能、更便宜、更快。",
           "window": "128K",
@@ -97,9 +97,9 @@
           }
         },
         {
-          "name": "gpt-4-turbo/gpt-4-turbo-2024-04-09",
+          "name": "gpt-4-turbo / gpt-4-turbo-2024-04-09",
           "upstream": "普通",
-          "description": "OpenAI 最新的强大的模型，在大部分问题上都表现出色，更快的速度 (相较于GPT-4) 和更新的知识截止日期，单次最大输入 128,000 令牌。灵车版，上游不稳定。（禁止并发）",
+          "description": "OpenAI 最新的强大的模型，在大部分问题上都表现出色，更快的速度 (相较于GPT-4) 和更新的知识截止日期，单次最大输入 128,000 令牌。（禁止并发）",
           "window": "128K",
           "recommend": 7,
           "price": {
@@ -135,7 +135,7 @@
         {
           "name": "claude-3-opus-20240229",
           "upstream": "普通",
-          "description": "Claude 3 Opus是anthropic最智能的模型，在高度复杂的任务上拥有业界领先的性能。它能够理解开放式的提示和未知的情景，并以卓越的流畅性和类似人类的理解能力进行处理。Opus向我们展示了生成式人工智能的无限可能性。稳定版",
+          "description": "Claude 3 Opus是anthropic最智能的模型，在高度复杂的任务上拥有业界领先的性能。它能够理解开放式的提示和未知的情景，并以卓越的流畅性和类似人类的理解能力进行处理。Opus向我们展示了生成式人工智能的无限可能性。",
           "window": "200K",
           "recommend": 7,
           "price": {
