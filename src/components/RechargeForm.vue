@@ -75,7 +75,17 @@
       <el-table-column prop="completionTokens" label="输出Token" width="120" sortable></el-table-column>
       <el-table-column prop="quota" label="配额" width="120" sortable>
         <template #default="{ row }">
-          <span> ￥{{ row.quota }}</span>
+          <el-popover
+              placement="top-start"
+              title="计算详情"
+              :width="200"
+              trigger="hover"
+              :content="row.calc_detail"
+          >
+            <template #reference>
+              <span class="quota-amount"> ￥{{ formatQuota(row.quota) }}</span>
+            </template>
+          </el-popover>
         </template>
       </el-table-column>
     </el-table>
@@ -198,7 +208,8 @@ async function fetchBalanceHistory() {
       modelName: item.model_name,
       promptTokens: item.prompt_tokens,
       completionTokens: item.completion_tokens,
-      quota: formatQuota(item.quota)
+      quota: item.quota,
+      calc_detail: item.calc_detail
     }));
     ElMessage.success('获取余额历史成功')
   } catch (error) {
@@ -225,9 +236,8 @@ function formatMoney(amount) {
   return `¥ ${parseFloat(amount) / 500000}`;
 }
 
-const QuotaToMoney = 0.000002;
 function formatQuota(quota) {
-  return `${(quota * QuotaToMoney).toFixed(6).toLocaleString()}`;
+  return (quota * 0.000002).toFixed(6).toLocaleString();
 }
 </script>
 
@@ -246,5 +256,9 @@ function formatQuota(quota) {
   font-size: 16px;
   font-weight: bold;
   color: #606266;
+}
+.quota-amount {
+  color: #66ccff;
+  cursor: pointer;
 }
 </style>
