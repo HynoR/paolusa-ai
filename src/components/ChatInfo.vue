@@ -35,6 +35,7 @@
       <h4>一键使用：</h4>
       <el-button type="success" @click="openWebAppPro">点我开始使用(WebApp)</el-button>
       <el-button type="warning" @click="OpenAbout">使用技巧</el-button>
+      <a href="https://t.me/+LUHiL9fNLGRjZjI1"><el-button type="warning">API交流反馈TG群</el-button></a>
       <div>
         <small> 带有Eco Re为逆向方式得到的模型，比正式模型的折后价更便宜但降低了稳定性，阉割了部分功能，只适合小量使用, 不可并发。</small>
       </div>
