@@ -23,7 +23,11 @@
       <p><small>I：用户输入1M Token单价(单位usd) / O：AI输出1M Token单价(单位usd) / X: 参考折扣（该模型折扣约为官方价格的折扣比例）</small></p>
       <p><small> 价格计算方法 = (输入token * I + 输出token * O ) * X</small></p>
     </div>
-
+    <div>
+      <a href="https://livebench.ai/#" target="_blank">
+       <el-button type="info">模型评分排行榜</el-button>
+      </a>
+    </div>
     <el-tabs type="border-card">
       <el-tab-pane v-for="category in categories" :key="category.name" :label="category.label">
         <p><small>{{ category.description }}</small></p>
