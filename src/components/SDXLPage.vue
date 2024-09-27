@@ -121,9 +121,18 @@ import { ElMessage } from 'element-plus';
         });
 
         if (response.ok) {
-          const blob = await response.blob();
-          imageUrl.value = URL.createObjectURL(blob);
-          ElMessage.success('图像生成成功');
+          // 如果模型id=3
+          if (model.value === '3') {
+            const data = await response.json();
+            const imgbase64 = data.image;
+            imageUrl.value = 'data:image/png;base64,' + imgbase64;
+
+            ElMessage.success('图像生成成功');
+          } else {
+            const blob = await response.blob();
+            imageUrl.value = URL.createObjectURL(blob);
+            ElMessage.success('图像生成成功');
+          }
         } else {
           ElMessage.error('生成图像失败: ' + response.statusText);
         }
