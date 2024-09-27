@@ -7,9 +7,10 @@
         <el-form @submit.prevent="generateImage" label-position="top">
           <el-form-item label="选择免费模型">
             <el-select v-model="model" placeholder="请选择模型">
+              <el-option label="FLUX.1 Schnell (推荐)" value="3" />
               <el-option label="SDXL Lightning (极速)" value="0" />
               <el-option label="SDXL Base 1.0 (均衡)" value="1" />
-              <el-option label="SDXL Dreamshaper 8 （质量)" value="2" />
+              <el-option label="SDXL Dreamshaper 8 （均衡)" value="2" />
             </el-select>
           </el-form-item>
           <el-form-item label="提示词">
@@ -91,7 +92,7 @@ import { ref } from 'vue';
 import { ElMessage } from 'element-plus';
 
 
-    const model = ref('0');
+    const model = ref('3');
     const prompt = ref('');
     const imageUrl = ref('');
     const loading = ref(false);
