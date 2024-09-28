@@ -14,12 +14,13 @@
             </el-select>
           </el-form-item>
           <el-form-item label="提示词">
-            <el-input v-model="prompt" placeholder="请输入英文提示词，其他语言不会生成确定内容。" type="textarea"  :rows="3"></el-input>
+            <el-input v-model="prompt" placeholder="请输入英文提示词，其他语言不会生成确定内容。或者输入提示词后，点击优化提示词转换成适合的内容。不可生成NSFW内容" type="textarea"  :rows="3"></el-input>
           </el-form-item>
           <el-form-item>
             <el-button type="primary" native-type="submit" :loading="loading">
               生成图像
             </el-button>
+            <el-button type="info" @click="" :loading="loading">提示词优化</el-button>
             <small>一次生成预计需要3-20秒</small>
           </el-form-item>
         </el-form>
@@ -98,6 +99,42 @@ import { ElMessage } from 'element-plus';
     const loading = ref(false);
     const openMidjounary = () => {
       window.open('https://mjchat.nloli.xyz/#/draw/1002', '_blank');
+    };
+
+    const improvePrompt = async() => {
+      if (!prompt.value) {
+        ElMessage.warning('请输入提示词');
+        return;
+      }
+
+      loading.value = true;
+      // https://gentle-base-65f5.logty202029.workers.dev/conv POST
+      // req : {"prompt":"sunset cyberpunk city"}
+      // resp: {"response":"Vibrant sunset casting an array of colors over a futuristic cyberpunk city skyline. Neon lights flicker and reflect on glass buildings, creating a surreal atmosphere. Silhouettes of flying vehicles and bustling streets below. Dynamic composition showcasing the contrast between warm sunset hues and cold neon tones, capturing the essence of a high-tech metropolis."}
+      try {
+        const response = await fetch('https://gentle-base-65f5.logty202029.workers.dev/conv', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            prompt: prompt.value,
+          }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          prompt.value = data.response;
+          ElMessage.success('提示词优化成功');
+        } else {
+          ElMessage.error('提示词优化失败: ' + response.statusText);
+        }
+      } catch (error) {
+        ElMessage.error('发生错误: ' + error.message);
+      }
+      finally {
+        loading.value = false;
+      }
     };
 
     const generateImage = async () => {
