@@ -20,8 +20,8 @@
             <el-button type="primary" native-type="submit" :loading="loading">
               生成图像
             </el-button>
-            <el-button type="info" @click="" :loading="loading">提示词优化</el-button>
-            <small>一次生成预计需要3-20秒</small>
+            <el-button type="success" @click="improvePrompt" :loading="loading">提示词翻译+优化(可选)</el-button>
+            <br><small>一次生成预计需要3-20秒</small>
           </el-form-item>
         </el-form>
       </el-card>
