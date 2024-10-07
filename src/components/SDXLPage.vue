@@ -40,14 +40,14 @@
       </el-card>
   <el-card style="margin-top: 20px;">
     <template #header>
-    <h3>DALL-E 3 (含高级提示词优化)  <el-tag>0.06-0.12/张(普通)</el-tag> <el-tag>0.12-0.18/张(HD)</el-tag></h3>
+      <h3>DALL-E 3 <el-tag>付费</el-tag><el-tag>较低门槛</el-tag><el-tag>中等质量</el-tag></h3>
     </template>
     <div style="margin-top: 20px">
-      DALL-E 3 是由OpenAI研究的强大的图像生成模型。可以通过聊天来自动生成提示词和迭代图片。
+      DALL-E 3 是由OpenAI研究的强大的图像生成模型。可以通过聊天来自动生成提示词和迭代图片。使用难度较低。
     </div>
     <div>
       请自行填入密钥和API地址，OpenAI商业模型拒绝生成有害、色情、仇恨、暴力等内容图像，如有问题请在群内反馈。<br>
-      可使用下方的网站使用，或者在Lobechat通过GPT插件调用（调用时一定要说明图片数量）。<el-tag>较低门槛</el-tag>
+      可使用下方的网站使用，或者在Lobechat通过GPT插件调用（调用时一定要说明图片数量）。
     </div>
     <div>
       <a href="https://chat.nloli.xyz" target="_blank"> <el-button style="margin-top: 20px;"  type="primary">使用DALL-E 3插件绘图(可自动优化提示词)</el-button></a>
@@ -59,7 +59,7 @@
   <el-card style="margin-top: 20px;" >
 
     <template #header>
-      <h3>MidJourney (需要自行编写提示词) <el-tag>0.35/4张(绘图，重绘，变换)</el-tag> <el-tag>0.1/次(放大,描述)</el-tag></h3>
+      <h3>MidJourney <el-tag>付费</el-tag><el-tag>难度较高</el-tag><el-tag>极高质量</el-tag></h3>
     </template>
     <div>
       请自行填入密钥和API地址，<span style="color:red">MJ绘图商业模型拒绝生成有害、色情、仇恨、暴力等内容图像，</span>部分功能暂不稳定，如有问题请在群内反馈。
@@ -72,22 +72,22 @@
   </el-card>
 
   <el-card style="margin-top: 20px;">
-    <h3>Flux.1 (含提示词优化) <el-tag>0.45/张(Pro模型绘图)</el-tag></h3>
+    <h3>Flux.1 (含提示词优化) <el-tag>免费+付费</el-tag> <el-tag>难度较低</el-tag><el-tag>高质量(仅Pro)</el-tag></h3>
     <div>
-      新强大绘图模型。Pro/Dev/Schnell 三个版本，Pro版本最强大，Dev版本其次，Schnell牺牲质量换取速度。<el-tag>中等门槛</el-tag>
+      新强大绘图模型。Pro/Dev/Schnell 三个版本，Pro版本最强大，Dev版本其次，Schnell牺牲质量换取速度。该模型优势在于相当听话，基本上会遵循提示词。<el-tag>中等门槛</el-tag>
        </div>
     <div>
-      <a href="https://siliconflow.cn/" target="_blank"> <el-button style="margin-top: 20px;"  type="primary">免费使用Dev/Schnell绘图</el-button></a>
-
-    </div> <div>
-    <a href="https://chat.nloli.xyz" target="_blank"> <el-button style="margin-top: 20px;"  type="primary">使用Flux.1 Pro/Dev/Schnell绘图</el-button></a>
-  </div>
+      <a href="https://chat.nloli.xyz" target="_blank"> <el-button style="margin-top: 20px;"  type="primary">使用Flux.1 Pro/Dev/Schnell绘图</el-button></a>
+    </div>
+    <div>
+      <a href="https://siliconflow.cn/" target="_blank"> <el-button style="margin-top: 20px;"  type="primary">免费Flux.1 使用Dev/Schnell绘图(三方)</el-button></a>
+    </div>
 
   </el-card>
   <el-card style="margin-top: 20px;">
-    <h3>Ideogram (含提示词优化)  <el-tag>Free</el-tag></h3>
+    <h3>Ideogram (含提示词优化)  <el-tag>免费</el-tag><el-tag>难度较低</el-tag><el-tag>高质量</el-tag></h3>
     <div style="margin-top: 20px">
-      Ideo2.0是新一代图片生成模型，支持多种图片生成功能。<el-tag>较低门槛</el-tag>
+      Ideo2.0是新一代图片生成模型，支持多种图片生成功能。
     </div>
     <a href="https://ideogram.ai/" target="_blank"> <el-button style="margin-top: 20px;"  type="primary">免费使用Ideogram</el-button></a>
   </el-card>
