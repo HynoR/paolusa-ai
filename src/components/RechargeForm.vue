@@ -21,7 +21,7 @@
                          @change="calculateEstimates"
                          placeholder="请输入金额(0.1-50)">
         </el-input-number>
-        <span class="description">金额将从跑路云余额中扣除,1元=500kToken,由于上游灵车性质,我们不建议您一次性冲太多金额</span>
+        <span class="description">金额将从跑路云余额中扣除,由于上游灵车性质,我们不建议您一次性冲太多金额。如需高量高并发(数据标注等时间长、量大、并发多的情景)，请在交流群与我们联系采购独享批发APIKey，批发价在目前价格的基础下继续优惠七到九折不等。</span>
       </el-form-item>
 
       <el-form-item>
