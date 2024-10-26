@@ -80,7 +80,7 @@
       <a href="https://chat.nloli.xyz" target="_blank"> <el-button style="margin-top: 20px;"  type="primary">使用Flux.1 Pro/Dev/Schnell绘图</el-button></a>
     </div>
     <div>
-      <a href="https://siliconflow.cn/" target="_blank"> <el-button style="margin-top: 20px;"  type="primary">免费Flux.1 使用Dev/Schnell绘图(三方)</el-button></a>
+      <a href="https://cloud.siliconflow.cn/i/c2DrMg1s" target="_blank"> <el-button style="margin-top: 20px;"  type="primary">免费Flux.1 使用Dev/Schnell绘图(三方)</el-button></a>
     </div>
 
   </el-card>

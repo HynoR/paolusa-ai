@@ -27,42 +27,12 @@
       <a href="https://livebench.ai/#" target="_blank">
        <el-button type="info">模型评分排行榜</el-button>
       </a>
+      <a href="https://chatapi.nloli.xyz/pricing" target="_blank">
+        <el-button type="success">模型价格表</el-button>
+      </a>
     </div>
-    <el-tabs type="border-card">
-      <el-tab-pane v-for="category in categories" :key="category.name" :label="category.label">
-        <p><small>{{ category.description }}</small></p>
-        <el-table :data="category.models" style="width: 100%" :default-sort="{ prop: 'recommend', order: 'descending' }">
-          <el-table-column prop="name" label="模型名称" width="180" sortable>
-            <template #default="scope">
-              <el-tooltip :content="scope.row.description" placement="top" effect="light">
-                <span>{{ scope.row.name }}</span>
-              </el-tooltip>
-            </template>
-          </el-table-column>
-          <el-table-column prop="upstream" label="上游" width="80"></el-table-column>
-          <el-table-column prop="window" label="窗口" width="80"></el-table-column>
-          <el-table-column prop="recommend" label="推荐度" width="100" sortable></el-table-column>
-          <el-table-column prop="price" label="输入价格" width="120" sortable :sort-method="sortByInputPrice">
-            <template #default="scope">
-              <span v-html="formatPrice(scope.row.price.input)"></span>
-            </template>
-          </el-table-column>
-          <el-table-column prop="price" label="输出价格" width="120" sortable :sort-method="sortByOutPutPrice">
-            <template #default="scope">
-              <span v-html="formatPrice(scope.row.price.output)"></span>
-            </template>
-          </el-table-column>
-
-          <el-table-column prop="price" label="相对折扣" width="120" sortable :sort-method="sortByMutiPrice">
-            <template #default="scope">
-              <div>{{ scope.row.price.multiplier?scope.row.price.multiplier:"-" }}</div>
-            </template>
-          </el-table-column>
-          <el-table-column prop="description" label="简介"  min-width="500" ></el-table-column>
-        </el-table>
-      </el-tab-pane>
-    </el-tabs>
   </el-card>
+
   <el-card>
     <div>国产模型API一般用于开发和对比测试，如您需要常规使用对话，推荐使用国产模型官方的免费对话。</div>
     <el-button type="text">
