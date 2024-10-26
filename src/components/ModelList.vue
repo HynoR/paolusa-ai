@@ -64,56 +64,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import modelData from '../assets/model.json';
 
-const categories = ref([]);
 
-onMounted(() => {
-  categories.value = modelData.categories;
-});
-
-const sortByOutPutPrice = (a, b) => {
-  if (parseFloat(a.price.output) === null || parseFloat(b.price.output) === null) {
-    return 0;
-  }
-  return parseFloat(a.price.output) - parseFloat(b.price.output);
-}
-
-const sortByInputPrice = (a, b) => {
-  if (parseFloat(a.price.input) === null || parseFloat(b.price.input) === null) {
-    return 0;
-  }
-  return parseFloat(a.price.input) - parseFloat(b.price.input);
-}
-
-const sortByMutiPrice = (a, b) => {
-  let a_muti = 0;
-  let b_muti = 0;
-  if (parseFloat(a.price.multiplier) === 0) {
-    a_muti = 0;
-  }
-  if (parseFloat(b.price.multiplier) === 0) {
-    b_muti = 0;
-  }
-  return a_muti - b_muti;
-}
-
-const formatPrice = (price) => {
-  // 如果价格字符串第一个为# ，则按@分割成行
-  if (!price){
-    return '';
-  }
-  price = price.toLocaleString()
-  if (price[0] === '#') {
-    return price.slice(1).split('@').map((p) => {
-      return p.split(' ').map((s) => {
-        return s.replace('CNY', 'CNY/1M');
-      }).join(' ');
-    }).join('<br>');
-  }
-  return price;
-};
 </script>
 
 <style scoped>
