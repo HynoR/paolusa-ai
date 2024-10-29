@@ -58,6 +58,16 @@ import axios from 'axios';
 import { ElMessage } from 'element-plus';
 
 const syncLoading = ref(false);
+import {reactive} from "vue";
+
+const form = reactive({
+  username: '',
+  passwd: ''
+});
+
+function handleSubmit() {
+  ElMessage.warning('敬请期待');
+}
 
 onMounted(() => {
   initTurnstile();
