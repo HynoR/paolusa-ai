@@ -33,12 +33,7 @@
       </div>
     </template>
 
-
       <template #default>
-        <div class="action-buttons">
-          <el-button type="success" @click="syncChatKey" :loading="syncLoading">同步ChatKey</el-button>
-          <el-button type="danger" disabled>重置ChatKey(开发中...)</el-button>
-        </div>
         <p><strong>我们针对重度需求和更多功能需求的用户提供了独立账号服务</strong></p>
         <p><strong>* 创建独立账号需要预付20元，预付款将计入账号余额</strong></p>
         <p><strong>** 独立账号可以使用更多模型、自助管理APIKey、使用折扣、和其他功能</strong></p>
