@@ -2,12 +2,12 @@
   <el-card class="box-card">
     <template #header>
       <div class="card-header">
-        <span>详情</span>
+        <span>账号管理</span>
       </div>
     </template>
 
     <el-alert
-        title="详情"
+        title="Key详情"
         type="info"
         :closable="false"
         show-icon
@@ -25,6 +25,35 @@
         <p>如有其他模型需求、模型失效、无效扣费、面板Bug等，欢迎在<a href="https://t.me/+VgETgSaGDiMxNzhl" target="_blank">群内</a>汇报bug!</p>
       </template>
     </el-alert>
+  </el-card>
+  <el-card class="box-card">
+    <template #header>
+      <div class="card-header">
+        <span>独立账号</span>
+      </div>
+    </template>
+
+
+      <template #default>
+        <div class="action-buttons">
+          <el-button type="success" @click="syncChatKey" :loading="syncLoading">同步ChatKey</el-button>
+          <el-button type="danger" disabled>重置ChatKey(开发中...)</el-button>
+        </div>
+        <p><strong>我们针对重度需求和更多功能需求的用户提供了独立账号服务</strong></p>
+        <p><strong>* 创建独立账号需要预付20元，预付款将计入账号余额</strong></p>
+        <p><strong>** 独立账号可以使用更多模型、自助管理APIKey、使用折扣、和其他功能</strong></p>
+        <el-form :model="form" @submit.prevent="handleSubmit" label-width="120px">
+          <el-form-item label="账号">
+            <el-input v-model="form.username" readonly></el-input>
+          </el-form-item>
+          <el-form-item label="密码">
+            <el-input v-model="form.passwd" type="password" placeholder="请输入跑路云账号的密码"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" native-type="submit" :loading="loading" disabled>敬请期待</el-button>
+          </el-form-item>
+        </el-form>
+      </template>
   </el-card>
 </template>
 
