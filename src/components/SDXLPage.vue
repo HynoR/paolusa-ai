@@ -56,6 +56,18 @@
     <el-button style="margin-top: 20px;"  type="primary" @click="openMidjounary">使用DALL-E 3绘图</el-button>
     </div>
   </el-card>
+  <el-card style="margin-top: 20px;">
+    <template #header>
+      <h3>Recraft V3 <el-tag>免费</el-tag><el-tag>较低门槛</el-tag><el-tag>高质量</el-tag></h3>
+    </template>
+    <div style="margin-top: 20px">
+      Recraft V3 新生图模型
+    </div>
+    <div>
+      <a href="https://www.recraft.ai" target="_blank"> <el-button style="margin-top: 20px;"  type="primary">官网使用</el-button></a>
+    </div>
+
+  </el-card>
   <el-card style="margin-top: 20px;" >
 
     <template #header>
