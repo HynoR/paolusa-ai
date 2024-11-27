@@ -38,16 +38,25 @@
         <p><strong>* 创建独立账号需要预付20元，预付款将计入账号余额</strong></p>
         <p><strong>** 独立账号可以使用更多模型、自助管理APIKey、使用折扣、和其他功能</strong></p>
         <el-form :model="form" @submit.prevent="handleSubmit" label-width="120px">
-          <el-form-item label="账号">
-            <el-input v-model="form.username" readonly></el-input>
-          </el-form-item>
           <el-form-item label="密码">
             <el-input v-model="form.passwd" type="password" placeholder="请输入跑路云账号的密码"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" native-type="submit" :loading="loading" disabled>敬请期待</el-button>
+            <el-button type="primary" native-type="submit">创建</el-button>
           </el-form-item>
         </el-form>
+        <div v-if="CreateOkMsg" class="model-info">
+          <el-alert
+              title="创建成功"
+              type="success"
+              :closable="false"
+              show-icon
+          >
+            <template #default>
+              <p>{{ CreateOkMsg }}</p>
+            </template>
+          </el-alert>
+        </div>
       </template>
   </el-card>
 </template>
@@ -82,7 +91,42 @@ function initTurnstile() {
       }
     });
   }
-}
+
+
+const CreateOkMsg = ref('');
+
+//  /tako_web/gpt_create POST
+ // ?token=xxxx&passwd=xxxx
+  //return: type CreateUserSuccessResp struct {
+//  Success      bool   `json:"success"`
+ // RechargeCode string `json:"recharge_code"`
+ // LoginId      string `json:"login_id"`
+ // PassWd       string `json:"passwd"`
+//}
+
+const createPremiumAccount = async function createPremiumAccount() {
+  const ctoken = window.sessionStorage.getItem('ctoken');
+  if (!ctoken) {
+    ElMessage.error('未找到token，请先登录');
+    return;
+  }
+  if (!form.passwd) {
+    ElMessage.error('请输入密码');
+    return;
+  }
+  try {
+    const response = await axios.post('https://labapi.nloli.xyz/tako_web/gpt_create', { token: ctoken, passwd: form.passwd });
+    if (response.data.success) {
+      ElMessage.success(`创建成功`);
+      CreateOkMsg.value = `登陆网站: https://chatapi.nloli.xyz 登录ID: ${response.data.login_id}, 请务必兑换您的20元充值码: ${response.data.recharge_code}`;
+    } else {
+      ElMessage.error('创建失败: ' + response.data.message);
+    }
+  } catch (error) {
+    ElMessage.error('创建失败: ' + error.response?.data?.message || error.message);
+  }
+};
+
 
 async function syncChatKey() {
   const cloudflare_token = window.sessionStorage.getItem('cloudflare_token');
