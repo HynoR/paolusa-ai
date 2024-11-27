@@ -96,13 +96,16 @@ const createPremiumAccount = async function createPremiumAccount() {
   try {
     const response = await axios.post('https://labapi.nloli.xyz/tako_web/gpt_create', { token: ctoken, passwd: form.passwd });
     if (response.data.success) {
-      ElMessage.success(`创建成功`);
-      CreateOkMsg.value = `登陆网站: https://chatapi.nloli.xyz 登录ID: ${response.data.login_id}, 请务必兑换您的20元充值码: ${response.data.recharge_code}`;
+      ElMessage.success(response.data.message);
+      CreateOkMsg.value = `登陆网站: https://chatapi.nloli.xyz\n` + 
+                         `登录ID: ${response.data.data.login_id}\n` + 
+                         `密码: ${response.data.data.passwd}\n` + 
+                         `请务必兑换您的20元充值码: ${response.data.data.recharge_code}`;
     } else {
-      ElMessage.error('创建失败: ' + response.data.message);
+      ElMessage.error('创建失败: ' + response.data.msg);  // 修改这里使用msg字段
     }
   } catch (error) {
-    ElMessage.error('创建失败: ' + error.response?.data?.message || error.message);
+    ElMessage.error('创建失败: ' + (error.response?.data?.msg || error.message));  // 修改这里使用msg字段
   }
 };
 
