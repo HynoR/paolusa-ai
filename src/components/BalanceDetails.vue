@@ -36,7 +36,7 @@
           <el-input v-model="form.passwd" type="password" placeholder="请输入跑路云账号的密码"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" native-type="submit">创建</el-button>
+          <el-button type="primary" native-type="submit" :disabled="isDoingReg">创建独立账号</el-button>
         </el-form-item>
       </el-form>
       <div v-if="CreateOkMsg" class="model-info">
@@ -63,9 +63,14 @@ const form = reactive({
   passwd: ''
 });
 
-
+const isDoingReg = ref(false);
 
 onMounted(() => {
+  const isRegMsg = window.localStorage.getItem('CreateOkMsg');
+  if (isRegMsg) {
+    isDoingReg.value = true;
+    CreateOkMsg.value = isRegMsg;
+  }
   initTurnstile();
 });
 
@@ -93,6 +98,7 @@ const createPremiumAccount = async function createPremiumAccount() {
     ElMessage.error('请输入密码');
     return;
   }
+  isDoingReg.value = true;
   try {
     const response = await axios.post('https://labapi.nloli.xyz/tako_web/gpt_create', { token: ctoken, passwd: form.passwd });
     if (response.data.success) {
@@ -101,12 +107,18 @@ const createPremiumAccount = async function createPremiumAccount() {
                          `登录ID: ${response.data.data.login_id}\n` + 
                          `密码: ${response.data.data.passwd}\n` + 
                          `请务必兑换您的20元充值码: ${response.data.data.recharge_code}`;
+      const CreateOkMsgbackup =`登陆网站: https://chatapi.nloli.xyz\n` + 
+                         `登录ID: ${response.data.data.login_id}\n` + 
+                         `密码:  -Paoluz密码- \n` + 
+                         `请务必兑换您的20元充值码: ${response.data.data.recharge_code}`;
+      window.localStorage.setItem('CreateOkMsg', CreateOkMsgbackup);
     } else {
       ElMessage.error('创建失败: ' + response.data.msg);  // 修改这里使用msg字段
     }
   } catch (error) {
     ElMessage.error('创建失败: ' + (error.response?.data?.msg || error.message));  // 修改这里使用msg字段
   }
+  isDoingReg.value = false;
 };
 
 
