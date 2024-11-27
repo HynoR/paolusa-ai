@@ -40,7 +40,7 @@
         </el-form-item>
       </el-form>
       <div v-if="CreateOkMsg" class="model-info">
-        <el-alert title="创建成功" type="success" :closable="false" show-icon>
+        <el-alert title="创建成功,请妥善保管此信息，该信息不会永久保存在此页面上" type="success" :closable="false" show-icon>
           <template #default>
             <p>{{ CreateOkMsg }}</p>
           </template>
