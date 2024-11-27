@@ -6,13 +6,7 @@
       </div>
     </template>
 
-    <el-alert
-        title="Key详情"
-        type="info"
-        :closable="false"
-        show-icon
-        class="model-info"
-    >
+    <el-alert title="Key详情" type="info" :closable="false" show-icon class="model-info">
       <template #default>
         <div class="action-buttons">
           <el-button type="success" @click="syncChatKey" :loading="syncLoading">同步ChatKey</el-button>
@@ -33,31 +27,26 @@
       </div>
     </template>
 
-      <template #default>
-        <p><strong>我们针对重度需求和更多功能需求的用户提供了独立账号服务</strong></p>
-        <p><strong>* 创建独立账号需要预付20元，预付款将计入账号余额</strong></p>
-        <p><strong>** 独立账号可以使用更多模型、自助管理APIKey、使用折扣、和其他功能</strong></p>
-        <el-form :model="form" @submit.prevent="handleSubmit" label-width="120px">
-          <el-form-item label="密码">
-            <el-input v-model="form.passwd" type="password" placeholder="请输入跑路云账号的密码"></el-input>
-          </el-form-item>
-          <el-form-item>
-            <el-button type="primary" native-type="submit">创建</el-button>
-          </el-form-item>
-        </el-form>
-        <div v-if="CreateOkMsg" class="model-info">
-          <el-alert
-              title="创建成功"
-              type="success"
-              :closable="false"
-              show-icon
-          >
-            <template #default>
-              <p>{{ CreateOkMsg }}</p>
-            </template>
-          </el-alert>
-        </div>
-      </template>
+    <template #default>
+      <p><strong>我们针对重度需求和更多功能需求的用户提供了独立账号服务</strong></p>
+      <p><strong>* 创建独立账号需要预付20元，预付款将计入账号余额</strong></p>
+      <p><strong>** 独立账号可以使用更多模型、自助管理APIKey、使用折扣、和其他功能</strong></p>
+      <el-form :model="form" @submit.prevent="createPremiumAccount()" label-width="120px">
+        <el-form-item label="密码">
+          <el-input v-model="form.passwd" type="password" placeholder="请输入跑路云账号的密码"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" native-type="submit">创建</el-button>
+        </el-form-item>
+      </el-form>
+      <div v-if="CreateOkMsg" class="model-info">
+        <el-alert title="创建成功" type="success" :closable="false" show-icon>
+          <template #default>
+            <p>{{ CreateOkMsg }}</p>
+          </template>
+        </el-alert>
+      </div>
+    </template>
   </el-card>
 </template>
 
@@ -67,16 +56,14 @@ import axios from 'axios';
 import { ElMessage } from 'element-plus';
 
 const syncLoading = ref(false);
-import {reactive} from "vue";
+import { reactive } from "vue";
 
 const form = reactive({
   username: '',
   passwd: ''
 });
 
-function handleSubmit() {
-  ElMessage.warning('敬请期待');
-}
+
 
 onMounted(() => {
   initTurnstile();
@@ -86,23 +73,15 @@ function initTurnstile() {
   if (typeof turnstile !== 'undefined') {
     turnstile.render('#turnstile-container', {
       sitekey: '0x4AAAAAAAaF42WXCEpfvcYO',
-      callback: function(token) {
+      callback: function (token) {
         window.sessionStorage.setItem('cloudflare_token', token);
       }
     });
   }
+}
 
 
 const CreateOkMsg = ref('');
-
-//  /tako_web/gpt_create POST
- // ?token=xxxx&passwd=xxxx
-  //return: type CreateUserSuccessResp struct {
-//  Success      bool   `json:"success"`
- // RechargeCode string `json:"recharge_code"`
- // LoginId      string `json:"login_id"`
- // PassWd       string `json:"passwd"`
-//}
 
 const createPremiumAccount = async function createPremiumAccount() {
   const ctoken = window.sessionStorage.getItem('ctoken');
@@ -157,6 +136,7 @@ async function syncChatKey() {
       window.location.reload();
     }, 3000);
   }
+
 }
 </script>
 
@@ -164,12 +144,15 @@ async function syncChatKey() {
 .box-card {
   margin-bottom: 20px;
 }
+
 .model-info {
   margin-top: 20px;
 }
+
 .action-buttons {
   margin-bottom: 15px;
 }
+
 #turnstile-container {
   margin-top: 15px;
   margin-bottom: 15px;
