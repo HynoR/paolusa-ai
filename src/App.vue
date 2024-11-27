@@ -2,7 +2,7 @@
   <div class="container">
     <el-container>
       <el-header>
-        <h5>ChatAPI Beta V2@build-10292300 | <el-button @click="refreshUserInfo">刷新数据</el-button></h5>
+        <h5>ChatAPI Beta V2@build-11272300 | <el-button @click="refreshUserInfo">刷新数据</el-button></h5>
 
       </el-header>
 
@@ -17,15 +17,12 @@
             <el-menu-item index="6">工具-Token计算器</el-menu-item>
             <el-menu-item index="7">文生图</el-menu-item>
             <el-menu-item index="9">共享GPT账号</el-menu-item>
-
-<!--            <el-menu-item index="8">Flux1</el-menu-item>-->
-
           </el-menu>
 
         </el-card>
         <router-view v-if="userInfoLoaded"></router-view>
         <div v-else>Loading...（如未加载数据,可尝试点击上方的刷新数据按钮）
-        <div>第一次使用？<el-button @click="Apply">点我申请账户</el-button></div>
+          <div>第一次使用？<el-button @click="Apply">点我申请账户</el-button></div>
         </div>
       </el-main>
     </el-container>
@@ -33,137 +30,105 @@
 </template>
 
 <script setup>
-import {onMounted, ref, watch} from 'vue'
-import {router} from "./route.js";
-import {useRoute} from 'vue-router';
+import { ref, watch } from 'vue'
+import { router } from "./route.js";
+import { useRoute } from 'vue-router';
 import axios from "axios";
-import {ElMessage} from "element-plus";
-import {GetCtoken, GetUserInfo, RemoveUserInfo, SetCtoken, SetUserInfo} from "./js/data.js";
+import { ElMessage } from "element-plus";
+import { GetCtoken, GetUserInfo, RemoveUserInfo, SetCtoken, SetUserInfo } from "./js/data.js";
 
 const token = ref(null);
-const userInfoLoaded = ref(false)
-const use_route = useRoute()
-onMounted(() => {
+const userInfoLoaded = ref(false);
+const use_route = useRoute();
 
-})
+const handleError = (error) => {
+  if (error.response && error.response.status === 400) {
+    ElMessage.error('请求无效: ' + error.response.data.msg);
+  } else {
+    ElMessage.error('操作失败: ' + error.message);
+  }
+}
+
+const fetchUserInfo = async (apply = false) => {
+  RemoveUserInfo();
+  if (!token.value) return;
+
+  const oldUserInfo = GetUserInfo();
+  if (oldUserInfo && oldUserInfo.api_key.length > 0) {
+    userInfoLoaded.value = true;
+    return;
+  } else {
+    RemoveUserInfo();
+  }
+
+  try {
+    const url = apply
+      ? `https://labapi.nloli.xyz/tako_web/gpt_info?apply=true&token=${token.value}`
+      : `https://labapi.nloli.xyz/tako_web/gpt_info?token=${token.value}`;
+    const response = await axios.get(url);
+    const userInfo = response.data;
+    if (userInfo && userInfo.api_key.length > 0) {
+      SetUserInfo(userInfo);
+      ElMessage.success(apply ? '获取成功' : '获取信息成功');
+      userInfoLoaded.value = true;
+      if (apply) {
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
+      }
+    }
+  } catch (error) {
+    handleError(error);
+  }
+}
 
 const refreshUserInfo = async () => {
-  RemoveUserInfo()
-  await getInfo()
+  await fetchUserInfo();
 }
 
-const getInfo = async () => {
- if (!token.value) {
-   return
+const Apply = async () => {
+  await fetchUserInfo(true);
 }
 
-  const old_userInfo = GetUserInfo()
-  if (old_userInfo && old_userInfo.api_key.length > 0) {
-    userInfoLoaded.value = true
-    return
-  } else {
-    RemoveUserInfo()
+const activeIndex = ref('1');
+
+const routeMap = {
+  '1': '/',
+  '2': '/model',
+  '3': '/usage',
+  '4': '/recharge',
+  '5': '/about',
+  '6': '/tiktoken',
+  '7': '/sdxl',
+  '8': '/flux1',
+  '9': 'https://app.nloli.xyz/cld/'
+}
+
+const handleClick = (key) => {
+  console.log(key);
+  if (['1', '2', '3', '4', '5', '6', '7', '8'].includes(key) && !token.value) {
+    ElMessage.error('未找到token，请先登录');
+    router.push('/');
+    return;
   }
 
-  try {
-    const response = await axios.get('https://labapi.nloli.xyz/tako_web/gpt_info?token=' + token.value);
-    const userInfo = response.data;
-    if (userInfo && userInfo.api_key.length > 0) {
-      SetUserInfo(userInfo)
-      ElMessage.success('获取信息成功');
-      userInfoLoaded.value = true
-    }
-  } catch (error) {
-    if (error.response && error.response.status === 400) {
-      ElMessage.error('请求无效: ' + error.response.data.msg);
+  const target = routeMap[key];
+  if (target) {
+    if (key === '9') {
+      window.location.href = target;
     } else {
-      ElMessage.error('获取信息失败: ' + error.message);
-    }}
-}
-
-const Apply= async () => {
-  try {
-    const response = await axios.get('https://labapi.nloli.xyz/tako_web/gpt_info?apply=true&token=' + token.value);
-    const userInfo = response.data;
-    if (userInfo && userInfo.api_key.length > 0) {
-      SetUserInfo(userInfo)
-      ElMessage.success('获取成功');
-      userInfoLoaded.value = true
-      // 等待两秒刷新
-      setTimeout(() => {
-        window.location.reload()
-      }, 2000)
-    }
-  } catch (error) {
-    console.log(error)
-    if (error.response && error.response.status === 400) {
-      ElMessage.error('请求无效: ' + error.response.data.msg);
-    } else {
-      ElMessage.error('获取信息失败: ' + error.message);
-    }}
-}
-
-const activeIndex = ref('1')
-
-
-const handleClick = (key, keyPath) => {
-
-  // 切换route页面
-  console.log(key)
-  if (key < 6) {
-    if (token.value === null || token.value === undefined || token.value === '') {
-      ElMessage.error('未找到token，请先登录');
-      router.push('/')
-      return;
+      router.push(`${target}?token=${token.value}`);
     }
   }
-  switch (key) {
-    case '1':
-      router.push('/?token=' + token.value)
-      break
-    case '4':
-      router.push('/recharge?token=' + token.value)
-      break
-    case '2':
-      router.push('/model?token=' + token.value)
-      break
-    case '3':
-      router.push('/usage?token=' + token.value)
-      break
-    case '5':
-      router.push('/about?token=' + token.value)
-      break
-    case '6':
-      router.push('/tiktoken?token=' + token.value)
-      break
-    case '7':
-      router.push('/sdxl?token=' + token.value)
-      break
-    case '8':
-      router.push('/flux1?token=' + token.value)
-      break
-    case '9':
-      window.location.href = "https://app.nloli.xyz/cld/";
-      break
-    default:
-      break
-  }
 }
-
 
 watch(() => use_route.query, async (query) => {
-  token.value = query.token;
+  token.value = query.token || GetCtoken();
   if (token.value) {
-    SetCtoken(token.value)
-    await getInfo()
-  }else{
-    if (GetCtoken){
-      token.value = GetCtoken()
-      await getInfo()
-    }
+    SetCtoken(token.value);
+    await fetchUserInfo();
   }
-
-}, {immediate: true});
+}, { immediate: true });
 
 </script>
 
