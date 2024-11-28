@@ -2,7 +2,7 @@
   <div class="container">
     <el-container>
       <el-header>
-        <h5>ChatAPI Beta V2@build-10292300 | <el-button @click="refreshUserInfo">刷新数据</el-button></h5>
+        <h5>ChatAPI Beta V2@build-11022300 | <el-button @click="refreshUserInfo">刷新数据</el-button></h5>
 
       </el-header>
 

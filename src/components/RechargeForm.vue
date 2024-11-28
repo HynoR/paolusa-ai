@@ -15,13 +15,13 @@
       <el-form-item label="充值金额">
         <el-input-number style="width: 50%"
                          v-model="form.amount"
-                         :min="0.1"
-                         :max="50"
+                         :min="1"
+                         :max="10"
                          :step="0.1"
                          @change="calculateEstimates"
-                         placeholder="请输入金额(0.1-50)">
+                         placeholder="请输入金额(1-10)">
         </el-input-number>
-        <span class="description">金额将从跑路云余额中扣除,由于上游灵车性质,我们不建议您一次性冲太多金额。如需高量高并发(数据标注等时间长、量大、并发多的情景)，请在交流群与我们联系采购独享批发APIKey，批发价在目前价格的基础下继续优惠七到九折不等。</span>
+        <span class="description">金额将从跑路云余额中扣除,由于上游灵车性质,我们不建议您一次性冲太多金额。该充值仅用于体验使用，如需重度使用推荐在账号管理中申请独立账号(支持自助生成Key,无过期时间,单独付费，独立折扣)。如需高量高并发(数据标注等时间长、量大、并发多的情景)，请在交流群与我们联系采购独享批发APIKey，批发价在目前价格的基础下继续优惠七到九折不等。</span>
       </el-form-item>
 
       <el-form-item>
@@ -30,7 +30,6 @@
       <el-alert type="warning" class="estimates">
         <p><small>充值金额相当于(按照消耗均值 3K Token 粗略估计,实际可用次数以使用为准)</small></p>
         <p><small>(热门模型) GPT-4o / Claude 3.5 Sonnet 约{{ estimates.gpt4o }}次 </small></p>
-        <p><small>(复杂模型) GPT-4 Turbo / Claude 3 Opus 对话 约{{ estimates.gpt4 }}次</small></p>
         <p><small>(简单模型) GPT-4o mini / Haiku 对话/沉浸式翻译 约{{ estimates.cheap }}次</small></p>
         <p><small>绘图 模型 约{{ estimates.paint }}张 | 文字转语音 约{{ estimates.whisper }}分钟</small></p>
       </el-alert>
