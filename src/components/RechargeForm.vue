@@ -16,7 +16,7 @@
         <el-input-number style="width: 50%"
                          v-model="form.amount"
                          :min="1"
-                         :max="10"
+                         :max="100"
                          :step="0.1"
                          @change="calculateEstimates"
                          placeholder="请输入金额(1-10)">
